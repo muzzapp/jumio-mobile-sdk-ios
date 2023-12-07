@@ -23,20 +23,11 @@ let package = Package(
             targets: ["JumioDeviceRiskBundle"]
         ),
         .library(
-            name: "JumioIProov",
-            targets: ["JumioIProovBundle"]
-        ),
-        .library(
             name: "JumioLiveness",
             targets: ["JumioLivenessBundle"]
         ),
     ],
     dependencies: [
-        .package(
-            name: "iProov",
-            url: "https://github.com/iProov/ios.git",
-            .exact("10.3.1")
-        )
     ],
     targets: [
         .target(name: "JumioBundle",
@@ -54,14 +45,6 @@ let package = Package(
                 dependencies: [
                     "JumioBundle",
                     "JumioDeviceRisk"
-                ]
-               ),
-        .target(name: "JumioIProovBundle",
-                dependencies: [
-                    "JumioBundle",
-                    "JumioLivenessBundle",
-                    "JumioIProov",
-                    .product(name: "iProov", package: "iProov")
                 ]
                ),
         .target(name: "JumioLivenessBundle",
@@ -84,11 +67,6 @@ let package = Package(
             name: "JumioDeviceRisk",
             url: "https://repo.mobile.jumio.ai/com/jumio/ios/jumio-mobile-sdk/\(version)/JumioDeviceRisk.xcframework.zip",
             checksum: "3e244bf03b9fcc88bfa6b9e5e68e3a4c2d3982784d948a3bde8b2d28eb2016f8"
-        ),
-        .binaryTarget(
-            name: "JumioIProov",
-            url: "https://repo.mobile.jumio.ai/com/jumio/ios/jumio-mobile-sdk/\(version)/JumioIProov.xcframework.zip",
-            checksum: "6bbc56158b0b22f1b91fb1be88fa52d2110eb75a8da3b7f918b2fb30cb7f3fd5"
         ),
         .binaryTarget(
             name: "JumioLiveness",

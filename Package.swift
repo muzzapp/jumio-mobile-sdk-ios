@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let version = "4.8.0"
+let version = "4.9.0"
 
 let package = Package(
     name: "Jumio",

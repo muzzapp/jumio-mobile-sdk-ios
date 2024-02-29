@@ -18,10 +18,6 @@ let package = Package(
             name: "JumioLiveness",
             targets: ["JumioLivenessBundle"]
         ),
-        .library(
-            name: "JumioDefaultUI",
-            targets: ["JumioDefaultUIBundle"]
-        ),
     ],
     dependencies: [ ],
     targets: [
@@ -36,12 +32,6 @@ let package = Package(
                     "JumioLiveness"
                 ]
                ),
-        .target(name: "JumioDefaultUIBundle",
-                dependencies: [
-                    "JumioBundle",
-                    "JumioDefaultUI"
-                ]
-        ),
         .binaryTarget(
             name: "Jumio",
             url: "https://repo.mobile.jumio.ai/com/jumio/ios/jumio-mobile-sdk/\(version)/Jumio.xcframework.zip",

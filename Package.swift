@@ -18,6 +18,10 @@ let package = Package(
             name: "JumioLiveness",
             targets: ["JumioLivenessBundle"]
         ),
+        .library(
+            name: "JumioDefaultUI",
+            targets: ["JumioDefaultUIBundle"]
+        ),
     ],
     dependencies: [ ],
     targets: [
@@ -32,6 +36,12 @@ let package = Package(
                     "JumioLiveness"
                 ]
                ),
+        .target(name: "JumioDefaultUIBundle",
+                dependencies: [
+                    "JumioBundle",
+                    "JumioDefaultUI"
+                ]
+               ),
         .binaryTarget(
             name: "Jumio",
             url: "https://repo.mobile.jumio.ai/com/jumio/ios/jumio-mobile-sdk/\(version)/Jumio.xcframework.zip",
@@ -41,6 +51,11 @@ let package = Package(
             name: "JumioLiveness",
             url: "https://repo.mobile.jumio.ai/com/jumio/ios/jumio-mobile-sdk/\(version)/JumioLiveness.xcframework.zip",
             checksum: "3d5594ee8157c3bfe2258cfc0eed5198742873ad68f36a0c0603f384abecff7f"
+        ),
+        .binaryTarget(
+            name: "JumioDefaultUI",
+            url: "https://repo.mobile.jumio.ai/com/jumio/ios/jumio-mobile-sdk/\(version)/JumioDefaultUI.xcframework.zip",
+            checksum: "e5bbbb502fcc00019c9c5e55b98ca2fb419649a80e620f7f27dac461a4a41fd2"
         ),
     ]
 )
